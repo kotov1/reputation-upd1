@@ -1,0 +1,154 @@
+@import "vars"
+
+
+
+
+/* ------------------------------------- 
+	Common styles 
+	------------------------------------- */
+.clearfix
+	&::after
+		content: ' '
+		display: table
+		clear: both
+
+
+
+
+/* ------------------------------------- 
+	finance
+	------------------------------------- */
+.upd-entity
+	overflow: hidden
+	margin-bottom: 15px
+	display: flex
+	
+	&__tab
+		flex: 1 0 0
+		padding: 14px 5px 14px
+		text-decoration: none
+		overflow: hidden
+		background-color: #fff
+		transition: all .2s ease
+		&:first-child
+			border-top-left-radius: $bd-rad
+			border-bottom-left-radius: $bd-rad
+		&:last-child
+			border-top-right-radius: $bd-rad
+			border-bottom-right-radius: $bd-rad
+		&:hover, &.js-tab--active
+			background-color: #3d8eb9
+			transition: all .2s ease
+			.upd-entity__text
+				color: #fff
+				transition: all .2s ease
+
+	&__text
+		font-size: 18px
+		line-height: 1
+		text-align: center
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
+		color: #3d8eb9
+		transition: all .2s ease
+
+
+.accordion-panel
+	padding: 25px 30px
+	margin-bottom: 10px
+	border-radius: $bd-rad
+	background-color: #fff
+
+.upd-ui-header
+	position: relative
+	font-size: 21px
+	font-weight: bold
+	line-height: normal
+	letter-spacing: normal
+	text-align: left
+	color: #2f323a
+	cursor: pointer
+	&::before
+		content: ''
+		display: inline-block
+		width: 9px
+		height: 9px
+		margin: 0
+		border-bottom: 1px solid rgba(63, 66, 82, 0.9)
+		border-right: 1px solid rgba(63, 66, 82, 0.9)
+		position: absolute
+		right: 0
+		top: 50%
+		margin-top: -5px
+		transform: rotate(45deg)
+		transition: all .2s ease
+	&::after
+		content: ''
+		width: 2px
+		height: 28px
+		position: absolute
+		top: 2px
+		left: -30px
+		background-color: #3d8eb9
+	&.ui-state-active
+		color: #2f323a
+		&::before
+			transform: rotate(-135deg)
+			transition: all .2s ease
+	&:focus
+		outline: none
+
+.upd-ui-content
+	display: none
+	padding-top: 30px
+
+
+.upd-finance__chart
+	width: 550px
+	height: 280px
+	padding-top: 28px
+	float: left
+
+.upd-chart-labels
+	margin: 0
+	padding-left: 0
+	list-style: none
+	font-size: 13px
+	color: #2f323a
+	li
+		display: block
+		max-width: 280px
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+		&:not(:last-child)
+			margin-bottom: 14px
+
+.upd-chart-label
+	display: inline-block
+	width: 12px
+	height: 12px
+	transform: translateY(2px)
+	margin-right: 4px
+	&--1
+		background-color: #4a90e2
+	&--2
+		background-color: #7ed321
+	&--3
+		background-color: #b8e986
+	&--4
+		background-color: #d0021b
+
+.upd-finance__chart-labels
+	float: right
+	padding-right: 15px
+
+
+
+
+
+/* ------------------------------------- 
+	Media styles 
+	------------------------------------- */
+@import "media"
